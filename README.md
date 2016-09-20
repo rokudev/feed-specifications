@@ -7,10 +7,10 @@ Your content is the most important part of your application. With Direct Publish
 
 ## Feed Formats
 
-### Direct Publisher Feed Format (JSON)
+### [Direct Publisher Feed Format (JSON)](https://github.com/rokudev/feed-specifications/blob/master/direct-publisher-feed-specification.md)
 This is a **JSON format** that is supported for all types of content, including Movies, Series and TV Specials that require **detailed metadata**. The Direct Publisher Feed format also supports all Direct Publisher functionality, including the ability to specify the UI categories and category mapping within the feed itself. You can find more detailed information in our [Direct Publisher Feed Specification Guide](https://github.com/rokudev/feed-specifications/blob/master/direct-publisher-feed-specification.md).
 
-### MRSS Feeds
+### [MRSS Feeds](https://github.com/rokudev/feed-specifications/blob/master/mrss-feed-specification.md)
 This format is supported for short-form content (videos that are generally less than 20 minutes long, and are not TV Shows or Movies). This allows partners that have existing MRSS feeds to re-purpose them with little or no changes for Direct Publisher. You can find more detailed information in our [MRSS Specification Guide](https://github.com/rokudev/feed-specifications/blob/master/mrss-feed-specification.md).
 
 ## Content Types
