@@ -189,15 +189,15 @@ The validity period for the video. The video will not be displayed to the user u
 ```
 
 ## Change Log
-**2016-07-08** - Updated `media:description` limit from 60 to 200 characters.
-**2016-07-06** - Removed Appendix, added links to external articles.
-**2016-05-17** - Updated elements description, added horizontal lines between elements to improve reading, updated examples, removed Elements Table.
-**2016-04-21** - Removed unused flags, added Appendix A.
-**2016-04-06** - Document created.
+
+* **2016-07-08** - Updated `media:description` limit from 60 to 200 characters.
+* **2016-07-06** - Removed Appendix, added links to external articles.
+* **2016-05-17** - Updated elements description, added horizontal lines between elements to improve reading, updated examples, removed Elements Table.
+* **2016-04-06** - Document created.
 
 ## References
-RSS 2.0 Specification: http://www.rssboard.org/rss-specification
-RSS 2.0 Specification (Harvard Law): http://cyber.law.harvard.edu/rss/rss.html
-MRSS 1.5.1 Specification: http://www.rssboard.org/media-rss
-Dublin Core - DCMI Metadata Terms: http://dublincore.org/documents/dcmi-terms/
-RSS Best Practices: http://www.rssboard.org/rss-profile
+
+* RSS 2.0 Specification: http://www.rssboard.org/rss-specification
+* RSS 2.0 Specification (Harvard Law): http://cyber.law.harvard.edu/rss/rss.html
+* MRSS 1.5.1 Specification: http://www.rssboard.org/media-rss
+* RSS Best Practices: http://www.rssboard.org/rss-profile
