@@ -4,9 +4,7 @@ This guide includes detailed information on the Direct Publisher Feed Specificat
 
 Initially, a JSON format will be supported that follows the JSON-Schema Draft 4. All the properties in the schema are **case sensitive**.
 
-Before submitting a feed, make sure it is a valid JSON file. You can easily do that by using an IDE, or free online tools like [JSON Scheme Validator](http://www.jsonschemavalidator.net/) or [JASON Schema Linter](http://jsonschemalint.com/draft4/).
-
-We want to make sure this guide is complete and easy to use. If you have any feedback and/or suggestions, please send an email to [titanfeedback@roku.com](mailto:titanfeedback@roku.com).
+Before submitting a feed, make sure it is a valid JSON file. You can easily do that by using an IDE, or free online tools like [JSON Scheme Validator](http://www.jsonschemavalidator.net/) or [JSON Schema Linter](http://jsonschemalint.com/draft4/).
 
 # Direct Publisher Feed Schema
 These are the properties for the root object of your feed. It contains basic information such as your company's name, when the feed was last updated, and other objects that will describe all your content such as TV Shows, Movies, etc.
