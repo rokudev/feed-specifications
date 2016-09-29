@@ -11,7 +11,7 @@ Before submitting a feed, make sure it is a valid JSON file. You can easily do t
 **Sections:**
 * [Direct Publisher Feed Schema](#direct-publisher-feed-schema)
 
-Content types:
+**Content types:**
 * [movie](#movie)
  * [extra](#extra)
 * [series](#series)
@@ -20,11 +20,11 @@ Content types:
 * [shortFormVideo](#shortformvideo)
 * [tvSpecial](#tvspecial)
 
-Content categorization:
+**Content categorization:**
 * [category](#category)
 * [playlist](#playlist)
 
-Content properties:
+**Content properties:**
 * [content](#content)
  * [video](#video)
  * [caption](#caption)
@@ -43,7 +43,7 @@ These are the properties for the root object of your feed. It contains basic inf
 | providerName | string | Required | The name of the feed provider. E.g.: “Acme Productions”.
 | lastUpdated | string | Required | The date that the feed was last modified in the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00
 | language | string | Required | The language the channel uses for all its information and descriptions. (e.g., “en”, “en-US”, “es”, etc.). ISO 639 alpha-2 or alpha-3 language code string.
-| * At least one of the following is required. |
+| |
 | movies | [Movie Object](#movie) | Required* | A list of one or more movies.
 | series | [Series Object](#series) | Required* | A list of one or more series. Series are episodic in nature and would include TV shows, daily/weekly shows, etc.
 | shortFormVideos | [ShortFormVideo Object](#shortformvideo) | Required* | A list of one or more short-form videos. Short-form videos are usually less than 20 minutes long and are not TV Shows or Movies.
@@ -51,6 +51,8 @@ These are the properties for the root object of your feed. It contains basic inf
 | |
 | categories | [Category Object](#category) | Optional | An ordered list of one or more categories that will show up in your Roku Channel. Categories may also be manually specified within the Channel Builder if you do not want to provide them directly in the feed. Each time the feed is updated it will refresh the categories.
 | playlists | [Playlist Object](#playlist) | Optional | A list of one or more playlists. They are useful for creating manually ordered categories inside your channel.
+
+*At least one of these types is required.
 
 Direct Publisher Feed Root Object Example:
 
@@ -154,9 +156,10 @@ This object represents a series, such as a season of a TV Show or a mini-series.
 | ----- | ---- | -------- | ----------- |
 | id | string | Required | Your immutable string reference ID for the series. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
 | title | string | Required | The title of the series. We use this field for matching in Roku Search.
-| *Exactly one of the following is required |
+| |
 | seasons | [Season Object](#season) | Required* | One or more seasons of the series. Seasons should be used if episodes are grouped by seasons.
 | episodes | [Episode Object](#episode) | Required* | One or more episodes of the series. Episodes should be used if they are not grouped by seasons (e.g., a mini-series).
+| |
 | genres | string | Required | The genre(s) of the series. Must be one of the genres listed in the Direct Publisher Feed - Supported Genres article.
 | thumbnail | string | Required | The URL of the thumbnail for the series. This is used within your channel and in search results. Image dimensions must be at least 800x450 (width x height, 16x9 aspect ratio).
 | releaseDate | string | Required | The date the series first aired. Used to sort programs chronologically and grouping related content in Roku Search. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
@@ -165,6 +168,8 @@ This object represents a series, such as a season of a TV Show or a mini-series.
 | tags | string | Optional | One or more tags (e.g., “dramas”, “korean”, etc.). Each tag is a string and is limited to 20 characters. Tags are used to define what content will be shown within a [category](#category).
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the series.
 | externalIds | [External ID Object](#externalid) | Optional | One or more third-party metadata provider IDs.
+
+*Exactly one of the following is required
 
 Series Object Example (seasons):
 
@@ -356,11 +361,13 @@ Each category is displayed as a separate row to end-users.
 | Field | Type | Required | Description |
 | ----- | ---- | -------- | ----------- |
 | name | string | Required | The name of the category that will show up in the channel.
-| * Exactly one of the following is required |
+| |
 | playlistName | string | Required* | The name of the playlist in this feed that contains the content for this category.
 | query | string | Required* | The query that will specify the content for this category. It is a Boolean expression containing tags that you have provided in your content feed. The available operators are: <ul><li>AND</li><li>OR</li></ul>You cannot use both of them in the same query. You can use more than one. For example, if your feed has the tags "romance", "movie", "korean" and "dramas", you could do:<ul><li>movie AND korean</li><li>movie AND korean AND dramas</li><li>romance OR dramas</li></ul>The following is NOT supported:<ul></li><li>movie AND romance OR dramas</li></ul> |
 | |
 | order | enum | Required | The order of the category. Must be one of the following:<ul><li>manual – For playlists only</li><li>most_recent – reverse chronological order</li><li>chronological – the order in which the content was published (e.g., Episode 1, Episode 2, etc.)</li><li>most_popular – sort by popularity (based on Roku usage data).</li><ul>
+
+*Exactly one of the following is required
 
 Category Object Example (query):
 
