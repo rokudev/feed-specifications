@@ -13,11 +13,11 @@ The following is a complete list of the elements that Direct Publisher supports 
 
 **Elements List:**
 
-_Elements marked with * are required._
+> :information_source: Elements marked with * are required.
 
 * Channel
   * [lastBuildDate](#lastbuilddate)
-* Item
+* [Item](#item)
   * [guid\*](#guid)
   * [pubDate\*](#pubdate)
   * [media:title\*](#mediatitle)
@@ -45,7 +45,31 @@ The last time the feed was updated.
 ```
 ---
 
-## Item Sub-Elements
+## Item
+
+Each `<item>` in an MRSS feed correlates to one video / content item.
+
+**Example:**
+```xml
+<item>
+  <guid>https://example.org/cdn/video/vaaaXaaX</guid>
+  <pubDate>Sat, 07 Sep 2016 09:42:31 GMT</pubDate>
+  <media:title>The Best Show Ever</media:title>
+  <media:description>So long, and thanks for all the fish.</media:description>
+  <media:category>cooking</media:category>
+  <media:category>reality</media:category>
+  <media:thumbnail url="http://example.org/cdn/thumbs/42/lkmfaAAmA.jpg" />
+  <media:content
+   url="https://example.org/videos/your-video-id.mp4"
+   duration="74.74"
+   bitrate="2500"
+   language="en-us" />
+  <media:subTitle
+    lang="en-us"
+    href="http://www.example.org/cdn/subtitles/subtitle.srt" />
+</item>
+```
+
 The following are sub-elements of an `<item>` tag:
 
 ### guid
