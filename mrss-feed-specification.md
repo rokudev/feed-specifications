@@ -20,7 +20,7 @@ _Elements marked with * are required._
 * Item
   * [guid\*](#guid)
   * [pubDate\*](#pubdate)
-  * [media:title\*](#media:title)
+  * [media:title\*](#mediatitle)
   * [media:description\*](#mediadescription)
   * [media:category\*](#mediacategory)
   * [media:keywords\*](#mediakeywords)
