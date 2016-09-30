@@ -29,8 +29,11 @@ Before submitting a feed, make sure it is a valid JSON file. You can easily do t
  * [video](#video)
  * [caption](#caption)
  * [trickPlayFile](#trickplayfile)
+* [genres](#genres)
 * [externalId](#externalid)
 * [rating](#rating)
+ * [Parental Ratings](#parental-ratings)
+ * [Rating Sources](#rating-sources)
 * [credit](#credit)
 
 ---
@@ -52,7 +55,7 @@ These are the properties for the root object of your feed. It contains basic inf
 | categories | [Category Object](#category) | Optional | An ordered list of one or more categories that will show up in your Roku Channel. Categories may also be manually specified within the Channel Builder if you do not want to provide them directly in the feed. Each time the feed is updated it will refresh the categories.
 | playlists | [Playlist Object](#playlist) | Optional | A list of one or more playlists. They are useful for creating manually ordered categories inside your channel.
 
-*At least one of these types is required.
+> :information_source: *At least one of these content types is required
 
 Direct Publisher Feed Root Object Example:
 
@@ -94,7 +97,7 @@ This object represents a movie object.
 | id | string | Required | Your immutable string reference ID for the movie. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
 | title | string | Required | Movie title. We use this value for matching in Roku Search. Please use plain text and don’t include extra information like year, version label, etc.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
-| genres | string | Required | The genre(s) of the movie. Must be one of the genres listed in the [Direct Publisher Feed - Supported Genres]() article.
+| genres | string | Required | The genre(s) of the movie. Must be one of the values listed in [Genres](#genres).
 | thumbnail | string | Required | The URL of the thumbnail for the movie. This is used within your channel and in search results. Image dimensions must be at least 800x450 (width x height, 16x9 aspect ratio).
 | releaseDate | string | Required | The date the movie was initially released or first aired. Used to sort programs chronologically and grouping related content in Roku Search. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
 | shortDescription | string | Required | A movie description that does not exceed 200 characters. The text will be clipped if longer.
@@ -160,7 +163,7 @@ This object represents a series, such as a season of a TV Show or a mini-series.
 | seasons | [Season Object](#season) | Required* | One or more seasons of the series. Seasons should be used if episodes are grouped by seasons.
 | episodes | [Episode Object](#episode) | Required* | One or more episodes of the series. Episodes should be used if they are not grouped by seasons (e.g., a mini-series).
 | |
-| genres | string | Required | The genre(s) of the series. Must be one of the genres listed in the Direct Publisher Feed - Supported Genres article.
+| genres | string | Required | The genre(s) of the series. Must be one of the values listed in [Genres](#genres).
 | thumbnail | string | Required | The URL of the thumbnail for the series. This is used within your channel and in search results. Image dimensions must be at least 800x450 (width x height, 16x9 aspect ratio).
 | releaseDate | string | Required | The date the series first aired. Used to sort programs chronologically and grouping related content in Roku Search. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
 | shortDescription | string | Required | A description of the series that does not exceed 200 characters. The text will be clipped if longer.
@@ -169,7 +172,7 @@ This object represents a series, such as a season of a TV Show or a mini-series.
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the series.
 | externalIds | [External ID Object](#externalid) | Optional | One or more third-party metadata provider IDs.
 
-*Exactly one of the following is required
+> :information_source: *Must have either `seasons` or `episodes`
 
 Series Object Example (seasons):
 
@@ -289,9 +292,9 @@ Short-form videos are generally less than 20 minutes long, and are not TV Shows 
 | releaseDate | string | Required | The date the video first became available. Used to sort programs chronologically and grouping related content in Roku Search. Optional but very important, we recommend that you provide this. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
 | longDescription | string | Optional | A longer description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
 | tags | string | Optional | One or more tags (e.g., “dramas”, “korean”, etc). Each tag is a string and is limited to 20 characters. Tags are used to define what content will be shown within a [category](#category).
-| genres | string | Optional | The genre(s) of the video. Must be one of the genres listed in [Appendix B]().
+| genres | string | Optional | The genre(s) of the video. Must be one of the values listed in [Genres](#genres).
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the video.
-| rating | Rating Object(#rating) | Optional | A parental rating for the content.
+| rating | [Rating Object](#rating) | Optional | A parental rating for the content.
 
 Short-form Video Object Example:
 
@@ -319,7 +322,7 @@ Child object of root property `tvSpecials`.
 | title | string | Required | Episode title. We use this value for matching in Roku Search. Please don’t include extra information like year, version label, etc.
 | content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
 | thumbnail | string | Required | The URL of the thumbnail for the TV Special. This is used within your channel and in search results. Image dimensions must be at least 800x450 (width x height, 16x9 aspect ratio).
-| genres | string | Required | The genre(s) of the movie. Must be one of the genres listed in the [Roku Feed - Support Genres]() article.
+| genres | string | Required | The genre(s) of the movie. Must be one of the values listed in [Genres](#genres).
 | releaseDate | string | Required | The date the TV Special first aired. Used to sort programs chronologically and grouping related content in Roku Search. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11
 | shortDescription | string | Required | A description of the special that does not exceed 200 characters. The text will be clipped if longer.
 | longDescription | string | Optional | A longer episode description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
@@ -367,7 +370,7 @@ Each category is displayed as a separate row to end-users.
 | |
 | order | enum | Required | The order of the category. Must be one of the following:<ul><li>manual – For playlists only</li><li>most_recent – reverse chronological order</li><li>chronological – the order in which the content was published (e.g., Episode 1, Episode 2, etc.)</li><li>most_popular – sort by popularity (based on Roku usage data).</li><ul>
 
-*Exactly one of the following is required
+> :information_source: Must have either `playlistName` or `query`
 
 Category Object Example (query):
 
@@ -435,7 +438,7 @@ This object represents the details about a single video content of a movie, epis
 | dateAdded | string | Required | The date the video was added to the library in the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00 This information is used to generate the “Recently Added” category.
 | videos | [Video Object](#video) | Required | One or more video files. For non-adaptive streams, you can specify the same video with different qualities so the Roku player can choose the best one based on bandwidth.
 | duration | integer | Required | Runtime in seconds.
-| captions | [Caption Object](#caption) | Required* | One or more video caption files. This is required except for short-form videos.  Supported formats are described in the [Closed Caption / Subtitle Support](https://github.com/rokudev/docs/blob/master/develop/specifications/closed-captioning.md) article.
+| captions | [Caption Object](#caption) | Required* | One or more caption files. This is required except for short-form videos.  Supported formats are described in [Closed Caption / Subtitle Support](https://github.com/rokudev/docs/blob/master/develop/specifications/closed-captioning.md).
 | trickPlayFiles | [Trickplay File Object](#trickplayfile) | Optional | The trickplay file(s) that displays images as a user scrubs through a video, in Roku’s BIF format. Trickplay files in multiple qualities can be provided.
 | language | string | Optional | The language in which the video was originally produced (e.g., “en”, “en-US”, “es”, etc). ISO 639 alpha-2 or alpha-3 language code string.
 | validityPeriodStart | string | Optional | The date when the content should become available in the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00
@@ -486,13 +489,13 @@ Video Object Example:
 ### caption
 Child object of property `content` -> `captions`.
 
-This object represents a single video caption file of a video content. The supported formats are described in the [Closed Caption / Subtitle Support](/closed-caption-subtitles-support/) article.
+This object represents a single video caption file of a video content. The supported formats are described in [Closed Caption / Subtitle Support](https://github.com/rokudev/docs/blob/master/develop/specifications/closed-captioning.md).
 
 | Field | Type | Required | Description |
 | ----- | ---- | -------- | ----------- |
-| url | string | Required | The URL of the video caption file. Supported formats are described in the [Closed Caption / Subtitle Support](https://github.com/rokudev/docs/blob/master/develop/specifications/closed-captioning.md) article.
-| language | string | Required | A language code for the subtitle (e.g., “en”, “es-mx”, “fr”, etc). ISO 639 alpha-2 or alpha-3 language code string.[c]
-| captionType | enum | Required | A string specifying the type of caption. Default is subtitle. Must be one of the following:<ul><li>CLOSED_CAPTION</li><li>SUBTITLE[d]</li></ul>
+| url | string | Required | The URL of the video caption file. Supported formats are described in [Closed Caption / Subtitle Support](https://github.com/rokudev/docs/blob/master/develop/specifications/closed-captioning.md).
+| language | string | Required | A language code for the subtitle (e.g., “en”, “es-mx”, “fr”, etc). [ISO 639-2 or alpha-3](https://www.loc.gov/standards/iso639-2/php/code_list.php) language code string.
+| captionType | enum | Required | A string specifying the type of caption. Default is subtitle. Must be one of the following:<ul><li>CLOSED_CAPTION</li><li>SUBTITLE</li></ul>
 
 Caption File Object Example:
 
@@ -524,6 +527,45 @@ Trickplay File Object Example:
   "quality": "FHD"
 }
 ```
+
+---
+
+## Genres
+
+The following genres are supported:
+
+* action
+* adventure
+* animals
+* animated
+* anime
+* children
+* comedy
+* crime
+* documentary
+* drama
+* educational
+* fantasy
+* faith
+* food
+* fashion
+* gaming
+* health
+* history
+* horror
+* miniseries
+* mystery
+* nature
+* news
+* reality
+* romance
+* science
+* science fiction
+* sitcom
+* special
+* sports
+* thriller
+* technology
 
 ---
 
@@ -564,12 +606,12 @@ Child object of property:
 * `shortFormVideo`
 * `tvSpecial`
 
-This object represents the rating for the video content. You can define the parental rating, as well as the source (USA Parental Rating, UK Content Provider, etc). Check the [Direct Publisher Feed - Parental Ratings]() article for all the acceptable parental ratings values.
+This object represents the rating for the video content. You can define the parental rating, as well as the source (USA Parental Rating, UK Content Provider, etc). See [Parental Ratings](#parental-ratings) and [Rating Sources](#rating-sources) for acceptable values.
 
 | Field | Type | Required | Description |
 | ----- | ---- | -------- | ----------- |
-| rating | enum | Required | Must be a value from the [Direct Publisher Feed - Parental Ratings]() article.
-| ratingSource | enum | Required | Must be one of the following:<ul><li>BBFC</li><li>CHVRS</li><li>CPR</li><li>MPAA</li><li>UK_CP</li><li>USA_PR</li></ul>Check the Direct Publisher Feed - Parental Ratings article for more information.
+| rating | enum | Required | Must be a value listed in [Parental Ratings](#parental-ratings)
+| ratingSource | enum | Required | Must be one of the following:<ul><li>BBFC</li><li>CHVRS</li><li>CPR</li><li>MPAA</li><li>UK_CP</li><li>USA_PR</li></ul>See [Rating Sources](#rating-sources) for more information.
 
 Rating Object Example:
 
@@ -579,6 +621,53 @@ Rating Object Example:
   "ratingSource": "USA_PR"
 }
 ```
+
+---
+
+### Parental Ratings
+
+The following parental ratings can be used to better help your viewers find age-appropriate content:
+
+* 12
+* 12A
+* 14+
+* 14A
+* 15
+* 18
+* 18+
+* 18A
+* A
+* AA
+* C
+* C8
+* E
+* G
+* NC17
+* PG
+* PG13
+* R
+* R18
+* TV14
+* TVG
+* TVMA
+* TVPG
+* TVY
+* TVY14
+* TVY7
+* U
+* Uc
+* UNRATED
+
+### Rating Sources
+
+These are the accepted values for the `ratingSource` property followed by their meaning:
+
+* BBFC - British Board of Film Classification
+* CHVRS - Canadian Home Video Rating System
+* CPR - Canadian Parental Rating
+* MPAA - Motion Picture Association of America
+* UK_CP - UK Content Provider
+* USA_PR - USA Parental Rating
 
 ---
 
