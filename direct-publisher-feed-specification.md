@@ -52,7 +52,7 @@ These are the properties for the root object of your feed. It contains basic inf
 | shortFormVideos | [ShortFormVideo Object](#shortformvideo) | Required* | A list of one or more short-form videos. Short-form videos are usually less than 20 minutes long and are not TV Shows or Movies.
 | tvSpecials | [TV Special Object](#tvspecial) | Required* | A list of one or more TV Specials. TV Specials are one-time TV programs that are not part of a series.
 | |
-| categories | [Category Object](#category) | Optional | An ordered list of one or more categories that will show up in your Roku Channel. Categories may also be manually specified within the Channel Builder if you do not want to provide them directly in the feed. Each time the feed is updated it will refresh the categories.
+| categories | [Category Object](#category) | Optional | An ordered list of one or more categories that will show up in your Roku Channel. Categories may also be manually specified within Direct Publisher if you do not want to provide them directly in the feed. Each time the feed is updated it will refresh the categories.
 | playlists | [Playlist Object](#playlist) | Optional | A list of one or more playlists. They are useful for creating manually ordered categories inside your channel.
 
 > :information_source: *At least one of these content types is required
@@ -355,7 +355,7 @@ TV Special Object Example:
 ## category
 Child object of root property `categories`.
 
-The category object defines a new category your channel will display, and the content included in it based either on a playlist (see object description below), or a query containing one or multiple tags. You can also create them directly in the Channel Builder.
+The category object defines a new category your channel will display, and the content included in it based either on a playlist (see object description below), or a query containing one or multiple tags. You can also create them directly in Direct Publisher.
 
 There are three default categories in every channel: "Continue Watching", "Most Popular", and "Recently Added".
 
@@ -397,7 +397,7 @@ Category Object Example (playlist):
 ## playlist
 Child object of root property `playlists`.
 
-A playlist is an **ordered** list of videos that may contain a mix of Movies, Series, Short-form videos, and TV Specials. It references a list of video IDs that are defined elsewhere in the feed. The same video can be referenced in multiple playlists.
+A playlist is an **ordered** list of videos that may contain a mix of [Movies](#movie), [Series](#series), [Short-form videos](#shortformvideo), and [TV Specials](#tvspecial). It references a list of video IDs that are defined elsewhere in the feed. The same video can be referenced in multiple playlists.
 
 Playlists are similar to tags: they help you define the content which your channel's categories will display. The main difference is that playlists let you manually specify the order of the content, and so they are perfect, for example, to create a "Featured" category in your channel.
 
