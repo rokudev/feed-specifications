@@ -7,7 +7,7 @@ This specification has detailed information on the MRSS elements you can use to 
 In the example Roku Channel image below, you can see where the fields of your MRSS feed will be used:
 
 ![Roku Channel Example](https://roku-developer-home-ghost-staging.s3.amazonaws.com/2016/Jul/cm9rdV9wcmV2aWV3LTE0Njc4NTg5MzU3OTk=.png)
-<p align=center>_Roku Channel Example_</p>
+<p align=center><i>Roku Channel Example</i></p>
 
 The following is a complete list of the elements that Direct Publisher supports along with descriptions and examples.
 
@@ -21,13 +21,13 @@ _Elements marked with * are required._
   * [guid\*](#guid)
   * [pubDate\*](#pubdate)
   * [media:title\*](#media:title)
-  * [media:description\*](#media:description)
-  * [media:category\*](#media:category)
-  * [media:keywords\*](#media:keywords)
-  * [media:thumbnail\*](#media:thumbnail)
-  * [media:content\*](#media:content)
-  * [media:subTitle](#media:subtitle)
-  * [dcterms:valid](#dcterms:valid)
+  * [media:description\*](#mediadescription)
+  * [media:category\*](#mediacategory)
+  * [media:keywords\*](#mediakeywords)
+  * [media:thumbnail\*](#mediathumbnail)
+  * [media:content\*](#mediacontent)
+  * [media:subTitle](#mediasubtitle)
+  * [dcterms:valid](#dctermsvalid)
 
 ---
 
