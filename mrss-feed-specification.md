@@ -1,12 +1,25 @@
 # MRSS Feed Specification
 
-MRSS Feeds for Direct Publisher follows the [MRSS 1.5.1 specification](http://www.rssboard.org/media-rss), and [RSS 2.0 specification](http://www.rssboard.org/rss-specification), with a few modifications on which elements are required or optional. These changes focus on ensuring customers have all the information necessary for the best experience with your channel and the Roku platform.
+### Overview
 
-This specification has detailed information on the MRSS elements you can use to build out a Direct Publisher-compatible MRSS feed, as well as examples to help along the way. We only parse the elements described in this spec. Any other elements provided will be ignored.
+Direct Publisher supports catalog feeds of content for launching channels on the Roku Publishing Platform. Specifically, we support MRSS feeds with required fields to ensure have the best experience with a channel.
+
+This specification has detailed information on the MRSS elements you can use to build out a Direct Publisher-compatible MRSS feed, as well as examples to help along the way.
+
+> :information_source: **Note:** only parse the elements described in this spec. Any other elements provided will be ignored.
+
+- - -
+
+#### Feed Formats
+MRSS Feeds for Direct Publisher are based on the following specifications:
+* [MRSS 1.5.1 specification](http://www.rssboard.org/media-rss)
+* [RSS 2.0 specification](http://www.rssboard.org/rss-specification)
+
+In addition, we indicate which items which elements are required and/or optional.
 
 In the example Roku Channel image below, you can see where the fields of your MRSS feed will be used:
 
-![Roku Channel Example](https://roku-developer-home-ghost-staging.s3.amazonaws.com/2016/Jul/cm9rdV9wcmV2aWV3LTE0Njc4NTg5MzU3OTk=.png)
+![Roku Channel Example](https://github.com/rokudev/docs/blob/master/images/mrss-content.jpg)
 <p align=center><i>Roku Channel Example</i></p>
 
 The following is a complete list of the elements that Direct Publisher supports along with descriptions and examples.
