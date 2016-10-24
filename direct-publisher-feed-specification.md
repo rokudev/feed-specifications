@@ -306,7 +306,7 @@ Short-form Video Object Example:
     ...
   },
   "thumbnail": "https://example.org/cdn/thumbnails/1509428502952/1",
-  "shortDescription": "Astonishing short-form video"
+  "shortDescription": "Astonishing short-form video",
   "releaseDate": "2016-01-01"
 }
 ```
