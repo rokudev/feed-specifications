@@ -682,6 +682,12 @@ Child object of property:
 
 This object represents a single person in the credits of a video content.
 
+| Field | Type | Required | Description |
+| ----- | ---- | -------- | ----------- |
+| name | string | required | name of the person
+| role | enum | required | role of the person - must be one of the following values:<br><ul><li>actor</li><li>anchor</li><li>host</li><li>narrator</li><li>voice</li><li>director</li><li>producer</li><li>screenwriter</li></ul>
+| birthDate | string | required | birthdate of the person
+
 **Credit Object Example:**
 
 ``` json
@@ -696,6 +702,7 @@ This object represents a single person in the credits of a video content.
 
 ## Change Log
 
+* **2017-05-02** - Updated enumerations for `role` within a `credit` object 
 * **2016-08-18** - Removed UHD as an option from trickPlayFile -> quality.
 * **2016-08-11** - Added SD to the qualities available for `video` -> `quality`. Updated `shortFormVideo`, `releaseDate` is now a required property.
 * **2016-07-28** - Fixed `playlist` -> `itemIds` property description to not include episodes.
