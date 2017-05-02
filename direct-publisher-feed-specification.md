@@ -13,7 +13,6 @@ Before submitting a feed, make sure it is a valid JSON file. You can easily do t
 
 **Content types:**
 * [movie](#movie)
- * [extra](#extra)
 * [series](#series)
  * [season](#season)
  * [episode](#episode)
@@ -134,19 +133,6 @@ Movie Object Example:
     ]
 }
 ```
-
----
-
-### extra
-Child object of property `movie` -> `extras`.
-
-This object represents additional content related to a movie, such as trailers and clips.
-
-| Field | Type | Required | Description |
-| ----- | ---- | -------- | ----------- |
-| id | string | Required | Your immutable string reference ID for the extra video. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
-| content | [Content Object](#content) | Required | The actual video content, such as the URL of the video file, subtitles, etc.
-| externalIds | [External ID Object](#externalid) | Optional | One or more third-party metadata provider IDs.
 
 ---
 
@@ -702,7 +688,7 @@ This object represents a single person in the credits of a video content.
 
 ## Change Log
 
-* **2017-05-02** - Updated enumerations for `role` within a `credit` object 
+* **2017-05-02** - Updated enumerations for `role` within a `credit` object
 * **2016-08-18** - Removed UHD as an option from trickPlayFile -> quality.
 * **2016-08-11** - Added SD to the qualities available for `video` -> `quality`. Updated `shortFormVideo`, `releaseDate` is now a required property.
 * **2016-07-28** - Fixed `playlist` -> `itemIds` property description to not include episodes.
