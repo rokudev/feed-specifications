@@ -102,7 +102,6 @@ This object represents a movie object.
 | shortDescription | string | Required | A movie description that does not exceed 200 characters. The text will be clipped if longer.
 | longDescription | string | Optional | A longer movie description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.
 | tags | string | Optional | One or more tags (e.g., “dramas”, “korean”, etc.). Each tag is a string and is limited to 20 characters. Tags are used to define what content will be shown within a [category](#category).
-| extras | [Extra Object](#extra) | Optional | One or more extras. Extras are additional content related to the movie, such as trailers and clips.
 | credits | [Credit Object](#credit) | Optional | One or more credits. The cast and crew of the movie.
 | rating | [Rating Object](#rating) | Optional | A parental rating for the content.
 | externalIds | [External ID Object](#externalid) | Optional | One or more third-party metadata provider IDs.
@@ -411,7 +410,6 @@ Playlist Object Example:
 Child object of property:
 
 * `movie`
-* `movie` -> `extra`
 * `series` -> `episodes` -> `episode`
 * `series` -> `seasons` -> `episodes` -> `episode`
 * `shortFormVideo`
@@ -559,7 +557,6 @@ The following genres are supported:
 Child object of property:
 
 * `movie`
-* `movie` -> `extras` -> `extra`
 * `series`
 * `series` -> `episodes` -> `episode`
 * `series` -> `seasons` -> `episodes` -> `episode`
