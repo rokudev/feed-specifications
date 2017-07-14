@@ -19,7 +19,7 @@ In addition, we indicate which items which elements are required and/or optional
 
 In the example Roku Channel image below, you can see where the fields of your MRSS feed will be used:
 
-![Roku Channel Example](https://github.com/rokudev/docs/blob/master/images/mrss-content.jpg)
+![Roku Channel Example](https://s3.amazonaws.com/roku-blog/developer/files/2017/07/mrss-content.jpg)
 <p align=center><i>Roku Channel Example</i></p>
 
 The following is a complete list of the elements that Direct Publisher supports along with descriptions and examples.
@@ -178,7 +178,7 @@ The thumbnail is used within your application and in the search results. The ima
 #### media:content
 *Required*
 
-The actual video file(s). For more information on supported formats, see [Audio and Video Support](https://github.com/rokudev/docs/blob/master/develop/specifications/audio-video-support.md).
+The actual video file(s). For more information on supported formats, see [Audio and Video Support](https://sdkdocs.roku.com/display/sdkdoc/Audio+and+Video+Support).
 
 **Flags:**
 
@@ -208,7 +208,7 @@ The actual video file(s). For more information on supported formats, see [Audio 
 #### media:subTitle
 *Optional*
 
-One or more subtitle files for the video. For more information on supported subtitle formats, see [Closed Caption / Subtitle Support](https://github.com/rokudev/docs/blob/master/develop/specifications/closed-captioning.md).
+One or more subtitle files for the video. For more information on supported subtitle formats, see [Closed Caption / Subtitle Support](https://sdkdocs.roku.com/display/sdkdoc/Closed+Caption+Support).
 
 **Flags:**
 
