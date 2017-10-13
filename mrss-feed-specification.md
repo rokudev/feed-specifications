@@ -66,7 +66,7 @@ Each `<item>` in an MRSS feed correlates to one video / content item.
 ```xml
 <item>
   <guid>https://example.org/cdn/video/vaaaXaaX</guid>
-  <pubDate>Sat, 07 Sep 2016 09:42:31 GMT</pubDate>
+  <pubDate>2016-09-07T09:42:31+00:00</pubDate>
   <media:title>The Best Show Ever</media:title>
   <media:description>So long, and thanks for all the fish.</media:description>
   <media:category>cooking</media:category>
@@ -99,11 +99,11 @@ The unique and immutable id for the video.
 ### pubDate
 *Required*
 
-The date the video first became available.
+The date the video first became available, in the [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00
 
 **Example:**
 ```xml
-<pubDate>Sat, 07 Sep 2016 09:42:31 GMT</pubDate>
+<pubDate>2016-09-07T09:42:31+00:00</pubDate>
 ```
 
 ***
@@ -229,6 +229,8 @@ One or more subtitle files for the video. For more information on supported subt
 *Optional*
 
 The validity period for the video. The video will not be displayed to the user unless it is within the validity period.
+
+This field conforms to the [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00
 
 **Example:**
 ```xml
