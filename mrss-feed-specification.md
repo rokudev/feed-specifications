@@ -50,11 +50,11 @@ The following are sub-elements of a `<channel>` tag:
 ### lastBuildDate
 *Optional*
 
-The last time the feed was updated.
+The last time the feed was updated, in the [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00
 
 **Example:**
 ```xml
-<lastBuildDate>Sat, 07 Sep 2016 09:42:31 GMT<lastBuildDate>
+<lastBuildDate>2016-09-07T09:42:31+00:00<lastBuildDate>
 ```
 ---
 
