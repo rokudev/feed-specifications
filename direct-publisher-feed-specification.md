@@ -422,7 +422,7 @@ This object represents the details about a single video content of a movie, epis
 | dateAdded | string | Required | The date the video was added to the library in the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00 This information is used to generate the “Recently Added” category.
 | videos | [Video Object](#video) | Required | One or more video files. For non-adaptive streams, you can specify the same video with different qualities so the Roku player can choose the best one based on bandwidth.
 | duration | integer | Required | Runtime in seconds.
-| captions | [Caption Object](#caption) | Required* | One or more caption files. This is required except for short-form videos.  Supported formats are described in [Closed Caption / Subtitle Support](https://sdkdocs.roku.com/display/sdkdoc/Closed+Caption+Support).
+| captions | [Caption Object](#caption) | Optional | Supported formats are described in [Closed Caption / Subtitle Support](https://sdkdocs.roku.com/display/sdkdoc/Closed+Caption+Support).
 | trickPlayFiles | [Trickplay File Object](#trickplayfile) | Optional | The trickplay file(s) that displays images as a user scrubs through a video, in Roku’s BIF format. Trickplay files in multiple qualities can be provided.
 | language | string | Optional | The language in which the video was originally produced (e.g., “en”, “en-US”, “es”, etc). ISO 639 alpha-2 or alpha-3 language code string.
 | validityPeriodStart | string | Optional | The date when the content should become available in the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00
