@@ -54,7 +54,7 @@ The last time the feed was updated, in the [ISO 8601](https://www.iso.org/iso-86
 
 **Example:**
 ```xml
-<lastBuildDate>2016-09-07T09:42:31+00:00<lastBuildDate>
+<lastBuildDate>2016-09-07T09:42:31+00:00</lastBuildDate>
 ```
 ---
 
