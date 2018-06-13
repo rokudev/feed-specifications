@@ -161,7 +161,7 @@ A comma-separated list of keywords. Similar to categories, keywords are used as 
 ### media:thumbnail
 *Required*
 
-The thumbnail is used within your application and in the search results. The image size must be 800x450 (width x height) or larger, with a 16x9 aspect ratio. Supported formats are `JPG`, `TIFF`, or `PNG`.
+The thumbnail is used within your application and in the search results. The image size must be 800x450 (width x height) or larger, with a 16x9 aspect ratio. Supported formats are `JPG` or `PNG`.
 
 **Flag(s):**
 
